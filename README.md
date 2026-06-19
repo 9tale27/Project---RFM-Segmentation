@@ -42,48 +42,6 @@ This project demonstrates **customer segmentation analysis** using the RFM (Rece
 
 ---
 
-## 🔍 METHODOLOGY
-
-### RFM Segmentation
-
-**Recency:** Days since last purchase (1-5 scale)
-- 5 = most recent buyer
-- 1 = haven't bought recently
-
-**Frequency:** Number of purchases (1-5 scale)
-- 5 = most frequent buyer
-- 1 = rare buyer
-
-**Monetary:** Total spending (1-5 scale)
-- 5 = highest spender
-- 1 = lowest spender
-
-### The 5 Segments Created
-
-1. **Champions** (926 customers)
-   - High on all three metrics
-   - Recent, frequent, high-value buyers
-
-2. **Loyal Customers** (973 customers)
-   - Good on most metrics
-   - Regular, reliable buyers
-
-3. **Potential Loyalists** (367 customers)
-   - Recent activity, building engagement
-   - Early-stage customers
-
-4. **At-Risk Customers** (688 customers)
-   - Low recency (haven't bought in months)
-   - But high historical frequency/spending
-   - Dormant but historically valuable
-
-5. **New Customers** (1,358 customers)
-   - Newest segment
-   - Haven't repeated purchase
-   - Lowest value
-
----
-
 ## 📈 KEY FINDINGS
 
 ### Finding 1: Customer Concentration
@@ -174,35 +132,59 @@ This project demonstrates **customer segmentation analysis** using the RFM (Rece
 - Encourage second purchase within 30 days
 - Use targeted promotional campaigns
 
+---
 
-## 📊 DASHBOARDS CREATED
+## 🔍 METHODOLOGY
 
-### Dashboard 1: RFM Segmentation
-Shows customer distribution across segments with:
-- 4 KPI cards (4K customers, £9M revenue, £2K avg value, £28K avg CLV)
-- Customer count by segment
-- Revenue contribution by segment
-- RFM positioning scatter plot
-- Segment performance table
+### RFM Segmentation
+
+**Recency:** Days since last purchase (1-5 scale)
+- 5 = most recent buyer
+- 1 = haven't bought recently
+
+**Frequency:** Number of purchases (1-5 scale)
+- 5 = most frequent buyer
+- 1 = rare buyer
+
+**Monetary:** Total spending (1-5 scale)
+- 5 = highest spender
+- 1 = lowest spender
+
+### The 5 Segments Created
+
+1. **Champions** (926 customers)
+   - High on all three metrics
+   - Recent, frequent, high-value buyers
+
+2. **Loyal Customers** (973 customers)
+   - Good on most metrics
+   - Regular, reliable buyers
+
+3. **Potential Loyalists** (367 customers)
+   - Recent activity, building engagement
+   - Early-stage customers
+
+4. **At-Risk Customers** (688 customers)
+   - Low recency (haven't bought in months)
+   - But high historical frequency/spending
+   - Dormant but historically valuable
+
+5. **New Customers** (1,358 customers)
+   - Newest segment
+   - Haven't repeated purchase
+   - Lowest value
 
 ---
 
-### Dashboard 2: Customer Lifetime Value & Retention
-Shows value analysis with:
-- 4 KPI cards (£78.25M total CLV, £27.80K avg CLV, 704 VIP, 3K customers)
-- Average RFM scores by segment
-- Average CLV by segment
-- CLV vs customer age scatter plot
-- Retention cohort heatmap
+## Technical Implementation
 
----
-
-### Dashboard 3: Retention Analysis
-Shows detailed retention patterns with:
-- 4 KPI cards (35% avg retention, 13 cohorts, 100% highest retention, 5 months avg)
-- Customer retention trend line
-- Top retaining cohorts
-- Retention level distribution
+- Data cleaning and preprocessing in Python
+- Missing value treatment
+- RFM score calculation using quintiles
+- Customer segmentation logic
+- CLV estimation
+- Cohort retention matrix generation
+- Power BI dashboard development
 
 ---
 
@@ -227,7 +209,7 @@ Shows detailed retention patterns with:
 
 ---
 
-## 📁 PROJECT FILES
+## 📁 PROJECT STRUCTURE
 
 ```
 customer-rfm-clv-analysis/
