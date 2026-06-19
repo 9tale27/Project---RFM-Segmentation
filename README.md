@@ -19,6 +19,18 @@ This project demonstrates **customer segmentation analysis** using the RFM (Rece
 
 ---
 
+
+## Dashboard Preview
+
+### RFM Segmentation Dashboard
+![RFM Dashboard](Visuals/RFM%20Customer%20Segementation%20Analysis.png)
+
+### Customer Lifetime Value Dashboard
+![CLV Dashboard](Visuals/Customer%20Lifetime%20Value%20Analysis.png)
+
+### Retention Analysis Dashboard
+![Retention Dashboard](Visuals/Customer%20Retention%20Analysis.png)
+
 ## 📊 THE DATA
 
 **Dataset:** Online Retail II (E-commerce transactions)
@@ -144,6 +156,24 @@ This project demonstrates **customer segmentation analysis** using the RFM (Rece
 **Key Insight:** Most customer cohorts struggle to retain beyond month 2.
 
 ---
+
+## Business Recommendations
+
+### Champions
+- Launch VIP loyalty programs
+- Provide exclusive offers
+- Prioritize retention efforts
+
+### At-Risk Customers
+- Trigger win-back campaigns
+- Offer personalized discounts
+- Re-engage through email marketing
+
+### New Customers
+- Improve onboarding experience
+- Encourage second purchase within 30 days
+- Use targeted promotional campaigns
+
 
 ## 📊 DASHBOARDS CREATED
 
