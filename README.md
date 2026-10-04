@@ -4,6 +4,8 @@
 **By:** Priyanshu | B.Tech CSE-AIML, MDU Rohtak  
 **Analysis Type:** Customer Segmentation & Lifetime Value  
 **Dataset:** 4,312 customers | £8.8M revenue | 19,213 orders | 2009-2010
+📄 Full findings write-up: [BUSINESS_INSIGHTS.md](BUSINESS_INSIGHTS.md)
+
 
 ---
 
@@ -40,6 +42,10 @@ This project demonstrates **customer segmentation analysis** using the RFM (Rece
 - **407,664 transactions** processed
 - **Time period:** December 2009 - December 2010
 
+**Note on the raw dataset:** `online_retail_II.xlsx` (44MB) isn't committed to this
+repo to keep it lightweight. Download it directly from the source:
+[UCI Machine Learning Repository — Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
+and place it in `Data/` to re-run `Notebook/customer_analytics.ipynb` yourself.
 ---
 
 ## 📈 KEY FINDINGS
@@ -136,6 +142,12 @@ This project demonstrates **customer segmentation analysis** using the RFM (Rece
 
 ## 🔍 METHODOLOGY
 
+**A note on CLV scope:** CLV is calculated as `AvgOrderValue × Frequency × (CustomerAgeDays / 30)`.
+This returns exactly 0 for any customer whose first and last purchase happen on the same
+calendar day — mostly one-time buyers — so those ~1,500 customers are excluded from every
+CLV-based figure in this report. RFM metrics (which don't use this formula) still cover all
+4,312 customers. Full detail is in `Notebook/customer_analytics.ipynb`, Section 6.
+
 ### RFM Segmentation
 
 **Recency:** Days since last purchase (1-5 scale)
@@ -211,23 +223,23 @@ This project demonstrates **customer segmentation analysis** using the RFM (Rece
 
 ## 📁 PROJECT STRUCTURE
 
-```
-customer-rfm-clv-analysis/
-├── README.md (this file)
-├── BUSINESS_INSIGHTS_ACTUAL.md (findings from data)
-├── rfm_segments.csv (4,312 customers with RFM scores)
-├── clv_segments.csv (CLV calculations)
-├── cohort_matrix.csv (retention data)
-├── customer_analytics.ipynb (Python analysis)
-├── dashboards/
-│   ├── 1_RFM_Segmentation.pbix
-│   ├── 2_CLV_Retention_Analysis.pbix
-│   └── 3_Retention_Analysis.pbix
-└── visuals/
-    ├── dashboard_1.png
-    ├── dashboard_2.png
-    └── dashboard_3.png
-```
+Project---RFM-Segmentation/
+├── README.md
+├── BUSINESS_INSIGHTS.md         (deep-dive findings — see link above)
+├── LICENSE
+├── requirements.txt
+├── Data/
+│   ├── rfm_segments.csv          (4,312 customers with RFM scores)
+│   ├── clv_segments.csv          (CLV calculated for 2,815 repeat customers — see Methodology)
+│   └── cohort_matrix.csv         (retention data)
+├── Notebook/
+│   └── customer_analytics.ipynb  (full Python analysis, step by step)
+├── Dashboard/
+│   └── RFM-Dashboard.pbix        (all 3 report pages in one file)
+└── Visuals/
+    ├── RFM Customer Segmentation Analysis.png
+    ├── Customer Lifetime Value Analysis.png
+    └── Customer Retention Analysis.png
 
 ---
 
@@ -267,18 +279,22 @@ customer-rfm-clv-analysis/
 
 ## 📊 BUSINESS METRICS
 
-| Metric | Value |
-|--------|-------|
-| Total Customers | 4,312 |
-| Total Orders | 19,213 |
-| Total Revenue | £8,832,003 |
-| Total CLV | £78.25M |
-| Average CLV | £27.80K |
-| Average Order Value | £459.69 |
-| Revenue per Customer | £2,048.24 |
-| Champion Customers | 926 (21%) |
-| New Customers | 1,358 (32%) |
-| Average Retention Rate | 35% |
+| Metric                        | Value    |
+|--------------------------------|----------|
+| Total Customers                | 4,312    |
+| Total Orders                   | 19,213   |
+| Total Revenue                  | £8,832,003 |
+| Customers with CLV calculated* | 2,815    |
+| Total CLV (of the 2,815)       | £78.25M  |
+| Average CLV (of the 2,815)     | £27.80K  |
+| Average Order Value            | £459.69  |
+| Revenue per Customer           | £2,048.24  |
+| Champion Customers             | 926 (21%) |
+| New Customers                  | 1,358 (32%) |
+| Average Retention Rate         | 35%      |
+
+*CLV excludes ~1,500 one-time buyers whose first and last purchase fall on the
+same day — the CLV formula naturally returns 0 for them. See Methodology.
 
 ---
 
