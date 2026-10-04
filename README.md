@@ -25,7 +25,7 @@ This project demonstrates **customer segmentation analysis** using the RFM (Rece
 ## Dashboard Preview
 
 ### RFM Segmentation Dashboard
-![RFM Dashboard](Visuals/RFM%20Customer%20Segementation%20Analysis.png)
+![RFM Dashboard](Visuals/RFM%20Customer%20Segmentation%20Analysis.png)
 
 ### Customer Lifetime Value Dashboard
 ![CLV Dashboard](Visuals/Customer%20Lifetime%20Value%20Analysis.png)
